@@ -1,0 +1,75 @@
+# =========================
+# 基础连接配置
+# =========================
+avp:
+  ip: "192.168.3.78"   # ← 改成 Vision Pro Tracking Streamer 显示的 IP
+  record: false         # 是否启用 avp_stream 自带记录
+
+# =========================
+# 主循环控制
+# =========================
+runtime:
+  loop_sleep_s: 0.005        # 主循环 sleep，控制 CPU 占用
+  print_interval_s: 0.5      # 打印频率（秒）
+  max_fps: 120               # 逻辑上限（用于后续扩展）
+
+# =========================
+# 数据处理
+# =========================
+processing:
+  enable_filter: false       # 是否启用滤波（后续再开）
+  pos_filter_alpha: 0.3      # 位置低通滤波系数
+  rot_filter_alpha: 0.2      # 姿态滤波系数
+
+# =========================
+# 调试与可视化
+# =========================
+debug:
+  print_keys: true           # 是否打印 raw keys
+  print_xyz: true            # 是否打印位置
+  print_pinch: true          # 是否打印 pinch
+  print_fps: false           # 后续可打开
+
+# =========================
+# 数据采集（后续用）
+# =========================
+dataset:
+  enable: false              # 当前最小版本先关闭
+  save_dir: "data/raw"
+  episode_name: "episode_000001.hdf5"
+
+# =========================
+# 相机（后续扩展）
+# =========================
+camera:
+  enable: false
+  width: 640
+  height: 480
+  fps: 30
+
+# =========================
+# 机器人（后续扩展）
+# =========================
+robot:
+  enable: false
+  type: "dummy"             # dummy / real / ros
+  control_hz: 50
+
+# =========================
+# 重定向（后续扩展）
+# =========================
+retargeting:
+  enable: false
+  scale:
+    x: 1.0
+    y: 1.0
+    z: 1.0
+
+  pinch:
+    min: 0.015
+    max: 0.08
+
+  workspace:
+    x: [0.2, 0.8]
+    y: [-0.5, 0.5]
+    z: [0.0, 1.2]

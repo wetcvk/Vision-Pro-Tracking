@@ -1,0 +1,8 @@
+numpy
+scipy
+h5py
+pyyaml
+opencv-python
+matplotlib
+avp_stream
+tqdm
