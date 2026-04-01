@@ -91,7 +91,7 @@ python scripts/run_receiver.py
 
 每一帧保存的数据结构如下（以 `JSONL` 中的一行为例）：
 
-数据格式为 float32 
+数据格式为 float32 各项数据含义参见/app/data/data_sample.json
 
 ```json
 {
